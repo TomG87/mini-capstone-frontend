@@ -1,8 +1,14 @@
-export function ProductsNew() {
+export function ProductsNew(props) {
+  const handleSubmit = (event) => {
+    event.preventDefault();
+    const params = new FormData(event.target);
+    props.onCreateProduct(params, () => event.target.reset());
+  };
+
   return (
       <div>
         <h1>New Product</h1>
-        <form>
+        <form onSubmit={handleSubmit}>
           <div>
             Name: <input name="name" type="text" />
           </div>
@@ -12,7 +18,10 @@ export function ProductsNew() {
           <div>
             Description: <input name="description" type="text" />
           </div>
-          <button type="submit">Create product</button>
+          <div>
+            Supplier: <input name="supplier_id" type="text" />
+          </div>
+          <button type="submit">Create Product</button>
         </form>
       </div>
     );
