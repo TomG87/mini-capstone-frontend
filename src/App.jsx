@@ -1,17 +1,18 @@
-import { useState } from 'react'
-import reactLogo from './assets/react.svg'
-import viteLogo from '/vite.svg'
-import { Content } from "./Content"
-import './App.css'
+import { BrowserRouter } from "react-router-dom";
+import { Header } from "./Header";
+import { Content } from "./Content";
+import { Footer } from "./Footer";
 
 function App() {
-
   return (
-     <div>
-      <Content />
-        </div>
-  
+    <div>
+      <BrowserRouter>
+        <Header />
+        <Content />
+        <Footer />
+      </BrowserRouter>
+    </div>
   )
 }
 
-export default App
+export default App;

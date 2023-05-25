@@ -8,8 +8,9 @@ export function ProductsIndex(props) {
       <p>Name: {product.name}</p>
       <p>Price: {product.price}</p>
       <p>Description: {product.description}</p>
+      <button onClick={() => props.onShowProduct(product)}>More info</button>
     </div>
-  ))}
+  ))};
   </div>
   );
 }
